@@ -9,4 +9,7 @@ class Article extends Model
 {
     use HasFactory;
     
+    public function tags() {
+        return $this->belongsToMany('App\Tag', 'helper');
+    }
 }
