@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('character_code',7);//character code
             $table->text('content');
             $table->date('creation_date');
-            $table->string('author',10);
+            $table->string('author',50);
         });
     }
 
