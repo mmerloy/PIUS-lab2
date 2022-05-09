@@ -11,6 +11,6 @@ class Tag extends Model
     public $timestamps = false;
 
     public function articles() {
-        return $this->belongsToMany('App\Article', 'helper');
+        return $this->belongsToMany('App\Article', 'article_tags');
     }
 }
