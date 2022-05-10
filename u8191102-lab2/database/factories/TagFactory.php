@@ -17,8 +17,8 @@ class TagFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this ->faker->text(9),//word()
-            'character_code' => $this ->faker->password(4, 7),
+            'title' => $this->faker->text(9), //word()
+            'character_code' => $this->faker->password(4, 7),
         ];
     }
 }

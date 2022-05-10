@@ -7,7 +7,7 @@ use App\Http\Filters\QueryFilter;
 
 class ArticleFilter extends QueryFilter
 {
-   
+
     public function title($search_string = '')
     {
         $this->builder->where('title', 'like', "%{$search_string}%");
@@ -28,6 +28,6 @@ class ArticleFilter extends QueryFilter
         // if($postsIds == null || $tagId == null)
         //     return;
 
-        $this->builder->whereIn('id', $articlesId);//???
+        $this->builder->whereIn('id', $articlesId); //???
     }
 }

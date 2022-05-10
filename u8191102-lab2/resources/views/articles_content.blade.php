@@ -12,8 +12,8 @@
 
 <body>
     <div class="container mt-5">
-    <p>Tags fields</p>
-    <table class="table table-bordered mb-4">
+        <p>Tags fields</p>
+        <table class="table table-bordered mb-4">
             <thead>
                 <tr>
                     <th>ID</th>

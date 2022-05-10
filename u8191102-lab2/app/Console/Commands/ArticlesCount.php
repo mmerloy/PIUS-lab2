@@ -30,6 +30,6 @@ class ArticlesCount extends Command
     {
         $id = $this->argument('id');
         $size = Tag::find($id)->articles->count();
-        $this->info('The number of articles linked to the tag with an ' .$id. ' = '. $size);
+        $this->info('The number of articles linked to the tag with an ' . $id . ' = ' . $size);
     }
 }

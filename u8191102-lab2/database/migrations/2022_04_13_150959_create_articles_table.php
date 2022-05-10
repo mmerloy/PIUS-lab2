@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
-            $table->string('title',20);
-            $table->string('character_code',7);//character code
+            $table->string('title', 20);
+            $table->string('character_code', 7); //character code
             $table->text('content');
             $table->dateTime('created_at');
-            $table->string('author',50);
+            $table->string('author', 50);
         });
     }
 

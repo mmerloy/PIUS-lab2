@@ -17,10 +17,10 @@ class ArticleFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this ->faker->text(9),//sentence
-            'character_code' => $this ->faker->text(6),
-            'content' => $this ->faker->text(100),//paragraphs
-            'author' => $this ->faker->name().' '.$this ->faker->lastName(),
+            'title' => $this->faker->text(9), //sentence
+            'character_code' => $this->faker->text(6),
+            'content' => $this->faker->text(100), //paragraphs
+            'author' => $this->faker->name() . ' ' . $this->faker->lastName(),
             'created_at' => now(),
         ];
     }

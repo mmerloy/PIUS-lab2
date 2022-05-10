@@ -11,13 +11,13 @@ return new class extends Migration
      *
      * @return void
      */
-    
+
     public function up()
     {
         Schema::create('tags', function (Blueprint $table) {
             $table->id();
-            $table->string('title',20);
-            $table->string('character_code',7);//character code
+            $table->string('title', 20);
+            $table->string('character_code', 7); //character code
         });
     }
 
