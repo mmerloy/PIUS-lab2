@@ -17,13 +17,13 @@
             <p>
                 Filters
             </p>
-            <form action="/articles" method="get">
+            <form action="/posts" method="get">
                 <label>Character code</label>
                 <input type="text" name="character_code" />
                 <label>Title part</label>
                 <input type="text" name="title" />
                 <label>Tag part</label>
-                <input type="text" name="tag_id" />
+                <input type="text" name="article_tags" />
                 <button type="submit" class="btn btn-primary">Filter</button>
             </form>
         </div>
@@ -34,7 +34,7 @@
                     <th>Title</th>
                     <th>Character code</th>
                     <th>Content</th>
-                    <th>Creation date</th>
+                    <th>Creation time</th>
                     <th>Author</th>
                 </tr>
             </thead>
@@ -45,14 +45,15 @@
                     <td>{{ $article->title }}</td>
                     <td>{{ $article->character_code }}</td>
                     <td>{{ $article->content }}</td>
-                    <td>{{ $article->creation_date }}</td>
+                    <td>{{ $article->created_at }}</td>
                     <td>{{ $article->author }}</td>
                 </tr>
                 @endforeach
             </tbody>
         </table>
         <div class="d-flex justify-content-center">
-            {{ $articles->links() }}
+            {{ $articles->withQueryString()->links()}}
+            <!-- ?? -->
         </div>
     </div>
 </body>
