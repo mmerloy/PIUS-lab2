@@ -12,6 +12,26 @@
 
 <body>
     <div class="container mt-5">
+    <p>Tags fields</p>
+    <table class="table table-bordered mb-4">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Character code</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($article->tags->sortBy('title') as $tag)
+                <tr>
+                    <td>{{ $tag->id }}</td>
+                    <td>{{ $tag->title }}</td>
+                    <td>{{ $tag->character_code }}</td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+        <p>Article fields</p>
         <table class="table table-bordered mb-4">
             <thead>
                 <tr>
@@ -19,7 +39,7 @@
                     <th>Title</th>
                     <th>Character code</th>
                     <th>Content</th>
-                    <th>Creation date</th>
+                    <th>Creation time</th>
                     <th>Author</th>
                 </tr>
             </thead>
@@ -29,29 +49,11 @@
                     <td>{{ $article->title }}</td>
                     <td>{{ $article->character_code }}</td>
                     <td>{{ $article->content }}</td>
-                    <td>{{ $article->creation_date }}</td>
+                    <td>{{ $article->created_at }}</td>
                     <td>{{ $article->author }}</td>
                 </tr>
             </tbody>
         </table>
-
-        <table class="table table-bordered mb-4">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Title</th>
-                    <th>Character code</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach($helper->tag_id->sortByAsc('created_at') as $tag_id)
-                <tr>
-                    <td>{{ $tag->id }}</td>
-                    <td>{{ $tag->title }}</td>
-                    <td>{{ $tag->character_code }}</td>
-                </tr>
-                @endforeach
-            </tbody>
     </div>
 </body>
 
