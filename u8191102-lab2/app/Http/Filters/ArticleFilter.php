@@ -20,14 +20,8 @@ class ArticleFilter extends QueryFilter
 
     public function article_tags($search_string = '')
     {
-        // $tagId = Tag::query()->where('title', 'like', "%{$search_string}%")->first()->value('id');
-        // $postsIds = ArticleTag::query()->where('tag_id', $tagId)->value('article_id');//->get()->pluck('article_id');
-
-        $articlesId = Tag::query()->where('title', 'like', "%{$search_string}%")->first()->fresh()->articles->pluck("id");
-
-        // if($postsIds == null || $tagId == null)
-        //     return;
-
-        $this->builder->whereIn('id', $articlesId); //???
+        $this->builder->whereHas('tags', function ($query) use ($search_string) {
+            $query->where('title', 'like', "%{$search_string}%");
+        });
     }
 }
