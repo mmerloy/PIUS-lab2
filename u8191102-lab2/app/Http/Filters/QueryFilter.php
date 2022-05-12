@@ -29,9 +29,4 @@ abstract class QueryFilter
         }
         return $this->builder;
     }
-
-    protected function paramToArray($param)
-    {
-        return explode($this->delimiter, $param);
-    }
 }
